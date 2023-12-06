@@ -18,6 +18,12 @@ public class RotasEndereco {
     private MetodosEndereco metodo;
 
 
+    @GetMapping(value = "/hello")
+    public ResponseEntity<String>getHello(){
+        String hello = "Hello Word";
+        return ResponseEntity.ok(hello);
+    }
+
     @GetMapping(value = "/{cep}")
     public ResponseEntity<Endereco>getEnd(@PathVariable String cep){
         Endereco end = metodo.getEndereco(cep);
